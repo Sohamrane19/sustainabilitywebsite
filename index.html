@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth Conservation & Sustainability</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #333;
+        }
+
+        /* Top section with background image */
+        .top-section {
+            background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1083533/header.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Text overlay on background */
+        .top-section h1 {
+            font-size: 2rem;
+            margin: 0;
+            line-height: 1.2;
+            font-weight: bold;
+        }
+
+        .top-section h1 .sustainability {
+            font-size: 1.5rem;
+        }
+
+        .top-section .small-text {
+            font-size: 2.5rem;
+            margin-top: 10px;
+        }
+
+        .learn-more-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2E8B57;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .learn-more-btn:hover {
+            background-color: #276946;
+        }
+
+        /* Logo */
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 20px;
+            left: 50px;
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            display: flex;
+            gap: 20px;
+            position: absolute;
+            top: 20px;
+            right: 50px;
+            align-items: center;
+        }
+
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .nav-bar a:hover {
+            text-decoration: underline;
+        }
+
+        /* Take Action Button */
+        .nav-bar a.take-action {
+            border: 2px solid white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Main content sections */
+        .content {
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .section img {
+            width: 40%;
+            border-radius: 10px;
+        }
+
+        .section .text {
+            width: 60%;
+        }
+
+        .section .text h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #2E8B57;
+        }
+
+        .section .text p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+
+        /* Mobile view adjustments */
+        @media (max-width: 768px) {
+            .nav-bar {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                cursor: pointer;
+            }
+
+            .mobile-menu-bar {
+                width: 25px;
+                height: 3px;
+                background-color: white;
+                margin: 5px 0;
+            }
+
+            .mobile-nav {
+                display: none;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.8);
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                border-radius: 5px;
+                padding: 10px;
+                z-index: 10;
+            }
+
+            .mobile-nav a {
+                color: white;
+                padding: 10px;
+                text-decoration: none;
+                text-align: center;
+            }
+
+            .mobile-nav a:hover {
+                background-color: #2E8B57;
+            }
+        }
+
+        /* Hide mobile menu and nav in non-mobile views */
+        @media (min-width: 769px) {
+            .mobile-menu,
+            .mobile-nav {
+                display: none;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Section -->
+    <div class="top-section" id="home">
+        <div class="logo">CSS224</div>
+        <div class="nav-bar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#news">News</a>
+            <a href="#readme">Read Me</a>
+            <a href="#takeaction" class="take-action">Take Action</a>
+        </div>
+        <div class="mobile-menu" onclick="toggleMenu()">
+            <div class="mobile-menu-bar"></div>
+            <div class="mobile-menu-bar"></div>
+            <div class="mobile-menu-bar"></div>
+        </div>
+        <div class="mobile-nav" id="mobile-nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#news">News</a>
+            <a href="#readme">Read Me</a>
+            <a href="#takeaction" class="take-action">Take Action</a>
+        </div>
+        <h1><span class="sustainability" style="font-size: 1em;">Sustainability</span><br><span style="font-size: 3em; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">starts with you</span></h1>
+        <button class="learn-more-btn" onclick="window.location='#learnmore'">Learn More</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Section 1 -->
+        <div class="section" id="about">
+            <img src="https://www.w3schools.com/w3images/lights.jpg" alt="Conservation">
+            <div class="text">
+                <h2>About Us</h2>
+                <p>
+                    Our mission is to inspire and promote actions that will ensure a sustainable future for all. We believe in the power of individual and collective efforts to make a positive impact on our planet.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="section" id="news">
+            <img src="https://www.w3schools.com/w3images/nature.jpg" alt="Sustainability">
+            <div class="text">
+                <h2>News</h2>
+                <p>
+                    Stay informed with the latest news on environmental conservation and sustainability efforts. Learn about new initiatives, research, and policies that are shaping our future.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section" id="readme">
+            <img src="https://www.w3schools.com/w3images/mountains.jpg" alt="Read Me">
+            <div class="text">
+                <h2>Read Me</h2>
+                <p>
+                    Dive deeper into the topics of conservation and sustainability. Explore our library of articles, guides, and resources to expand your knowledge and learn how you can make a difference.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="section" id="takeaction">
+            <img src="https://www.w3schools.com/w3images/forest.jpg" alt="Take Action">
+            <div class="text">
+                <h2>Take Action</h2>
+                <p>
+                    Ready to take the next step? Join our community of eco-warriors and start making a difference today. Whether it's reducing your carbon footprint or volunteering for conservation projects, every action counts.
+                </p>
+            </div>
+        </div>
+
+        <!-- Learn More Section -->
+        <div class="section" id="learnmore">
+            <img src="https://www.w3schools.com/w3images/ocean.jpg" alt="Learn More">
+            <div class="text">
+                <h2>Learn More</h2>
+                <p>
+                    Discover more about the various ways you can contribute to environmental sustainability. From educational resources to actionable tips, we provide the tools you need to live a more sustainable life.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Earth Conservation & Sustainability. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript to Toggle Mobile Menu -->
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById('mobile-nav');
+            if (nav.style.display === 'flex') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'flex';
+            }
+        }
+    </script>
+</body>
+
+</html>
